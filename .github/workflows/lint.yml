@@ -2,7 +2,8 @@ name: Lint
 
 on:
   push:
-    branches: [$default-branch]
+    branches:
+      - main
   pull_request:
     branches:
       - "**"
@@ -16,9 +17,16 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        working-directory: ["", "docs"]
+    defaults:
+      run:
+        working-directory: ${{ matrix.working-directory || github.workspace }}
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
           version: 9
       - uses: actions/setup-node@v4
@@ -26,19 +34,24 @@ jobs:
           node-version: 18
           cache: "pnpm"
           cache-dependency-path: |
-            pnpm-lock.yaml
-            docs/pnpm-lock.yaml
+            ${{ matrix.working-directory || '.' }}/pnpm-lock.yaml
       - name: Install
         run: pnpm install --frozen-lockfile --prefer-offline
+      # Linting under the root directory requires build because some packages
+      # depend on local eslint-plugin-* packages
       - name: Build
+        if: matrix.working-directory == ''
         run: pnpm build
-      - name: lint
+      - name: Lint
         run: pnpm lint
       - name: Check dependency versions
+        if: matrix.working-directory == ''
         run: node scripts/check-dependencies.js
-      - name: Install website
-        working-directory: docs/
-        run: pnpm install --frozen-lockfile --prefer-offline
-      - name: Lint website
-        working-directory: docs/
-        run: pnpm lint
+  save_event:
+    name: Save event
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/upload-artifact@v4
+        with:
+          name: event
+          path: ${{ github.event_path }}
