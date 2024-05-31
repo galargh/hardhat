@@ -152,7 +152,6 @@ jobs:
       - uses: ./.github/actions/setup-env
         with:
           node-version: ${{ matrix.node_version }}
-          cache-restore: true
       - name: Install
         run: pnpm install --frozen-lockfile --prefer-offline
       - name: Build

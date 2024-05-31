@@ -23,8 +23,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-env
-        with:
-          cache-restore: true
       - name: Install
         run: pnpm install --frozen-lockfile --prefer-offline
       - name: Add slow import

@@ -23,7 +23,6 @@ jobs:
         with:
           pnpm-lockfile: docs/pnpm-lock.yaml
           package-json: docs/package.json
-          cache-restore: true
       - name: Install Docs
         run: pnpm install --frozen-lockfile --prefer-offline
       - name: Build

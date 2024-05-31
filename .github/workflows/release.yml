@@ -22,7 +22,6 @@ jobs:
       - uses: ./.github/actions/setup-env
         with:
           node-version: 18.x
-          cache-restore: true
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile --prefer-offline

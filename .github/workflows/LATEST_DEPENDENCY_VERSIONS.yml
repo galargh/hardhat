@@ -15,8 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-env
-        with:
-          cache-restore: true
       - name: Delete pnpm-lock.yaml
         run: "rm pnpm-lock.yaml"
       - name: Install
