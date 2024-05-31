@@ -128,7 +128,7 @@ jobs:
     needs: [packages]
     name: Test ${{ matrix.package }} on ${{ matrix.runner }} with Node ${{ matrix.node_version }}
     runs-on: ${{ matrix.runner }}
-    if: fromJSON(needs.packages.outputs.packages)
+    if: needs.packages.outputs.packages != '[]'
     strategy:
       fail-fast: false
       matrix:
