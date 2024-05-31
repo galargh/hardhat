@@ -41,14 +41,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
-      - name: Install Node
-        uses: actions/setup-node@v4
+      - uses: ./.github/actions/setup-env
         with:
           node-version: ${{ matrix.node }}
-          cache: pnpm
+          cache-restore: true
 
       - name: Install package
         run: pnpm install --frozen-lockfile --prefer-offline
@@ -83,14 +79,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
-      - name: Install Node
-        uses: actions/setup-node@v4
+      - uses: ./.github/actions/setup-env
         with:
           node-version: ${{ matrix.node }}
-          cache: pnpm
+          cache-restore: true
 
       - name: Install package
         run: pnpm install --frozen-lockfile --prefer-offline
@@ -121,13 +113,10 @@ jobs:
         node: [18, 20]
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
-      - uses: actions/setup-node@v4
+      - uses: ./.github/actions/setup-env
         with:
           node-version: ${{ matrix.node }}
-          cache: pnpm
+          cache-restore: true
       - name: Install
         run: pnpm install --frozen-lockfile --prefer-offline
       - name: Install @types/node
