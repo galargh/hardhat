@@ -34,25 +34,20 @@ jobs:
         working-directory: ${{ matrix.working-directory || github.workspace }}
     steps:
       - uses: actions/checkout@v4
-        if: github.event_name != 'pull_request_target'
+        with:
+          persist-credentials: false
       # Checking out files from both the default branch and the PR merge commit when
       # the workflow is triggered on pull_request_target to limit the vulnerability surface
       - uses: actions/checkout@v4
         if: github.event_name == 'pull_request_target'
         with:
-          persist-credentials: false
-          sparse-checkout: |
-            .github/actions/*
-          sparse-checkout-cone-mode: false
-      # TODO: Consider checking out lock files, package.json, etc. from the default branch
-      - uses: actions/checkout@v4
-        if: github.event_name == 'pull_request_target'
-        with:
           ref: "refs/pull/${{ github.event.number }}/merge"
           persist-credentials: false
-          sparse-checkout: |
-            !.github/actions/*
-          sparse-checkout-cone-mode: false
+      # TODO: Consider checking out lock files, package.json, etc. from the default branch, too
+      - if: github.event_name == 'pull_request_target'
+        run: |
+          git checkout $GITHUB_SHA --no-overlay -- .github/actions/setup-env
+        working-directory: ${{ github.workspace }}
       - uses: ./.github/actions/setup-env
         with:
           pnpm-lockfile: ${{ matrix.working-directory || '.' }}/pnpm-lock.yaml
