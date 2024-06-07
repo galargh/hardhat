@@ -42,7 +42,7 @@ jobs:
         with:
           persist-credentials: false
           sparse-checkout: |
-            .github/*
+            .github/actions/*
       # TODO: Consider checking out lock files, package.json, etc. from the default branch
       - uses: actions/checkout@v4
         if: github.event_name == 'pull_request_target'
@@ -50,7 +50,7 @@ jobs:
           ref: "refs/pull/${{ github.event.number }}/merge"
           persist-credentials: false
           sparse-checkout: |
-            !.github/*
+            !.github/actions/*
       - uses: ./.github/actions/setup-env
         with:
           pnpm-lockfile: ${{ matrix.working-directory || '.' }}/pnpm-lock.yaml
