@@ -1,5 +1,15 @@
 # @nomicfoundation/hardhat-network-helpers
 
+## 1.0.11
+
+### Patch Changes
+
+- 8be0c2c: Improve an error message and add utility to clear all the existing snaphosts.
+- Updated dependencies [f65dc7c]
+- Updated dependencies [5d46baa]
+- Updated dependencies [6e36f3f]
+  - hardhat@2.22.5
+
 ## 1.0.10
 
 ### Patch Changes
