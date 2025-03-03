@@ -2,7 +2,8 @@ codecov:
   branch: v-next
   require_ci_to_pass: false
   notify:
-    wait_for_ci: true
+    # TODO: replace with 'manual_trigger: true' if the commenter is rate limited
+    wait_for_ci: false
 
 coverage:
   status:
