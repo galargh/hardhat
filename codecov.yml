@@ -1,11 +1,6 @@
 codecov:
   branch: v-next
 
-coverage:
-  status:
-    project: off
-    patch: off
-
 comment:
   layout: "header, diff, flags, components"
 
