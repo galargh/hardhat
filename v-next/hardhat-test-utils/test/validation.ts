@@ -36,7 +36,7 @@ describe("validations", () => {
         );
       });
 
-      it("Should ignore the order of the errors", async () => {
+      it("Should ignore the order of the errors!", async () => {
         assertValidationErrors(
           [
             { path: ["a", 1], message: "foo" },
