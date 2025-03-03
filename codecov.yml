@@ -7,8 +7,8 @@ codecov:
 
 coverage:
   status:
-    project: off
-    patch: off
+    project: true
+    patch: true
 
 # This section is not yet used because it doesn't support the carryforward setting
 component_management:
