@@ -4,10 +4,6 @@ codecov:
   notify:
     wait_for_ci: false
 
-comment:
-  require_changes: false
-  layout: "header, diff, flags, components"
-
 # This section is not yet used because it doesn't support the carryforward setting
 component_management:
   individual_components:
