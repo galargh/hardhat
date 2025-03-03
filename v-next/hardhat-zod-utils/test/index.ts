@@ -77,7 +77,7 @@ describe("unionType", () => {
   });
 });
 
-describe("conditionalUnionType", () => {
+describe("conditionalUnionTypes", () => {
   describe("Conditions evaluation", () => {
     it("should return the first type that matches", async () => {
       const shouldUseString = conditionalUnionType(
