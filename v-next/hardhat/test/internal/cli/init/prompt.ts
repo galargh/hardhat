@@ -10,7 +10,7 @@ import {
   promptForWorkspace,
 } from "../../../../src/internal/cli/init/prompt.js";
 
-describe("promptForWorkspace", () => {
+describe("promptForWorkspace!", () => {
   it("should fail if the user is not in an interactive shell", async () => {
     if (!process.stdout.isTTY) {
       await assertRejectsWithHardhatError(
