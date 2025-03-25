@@ -12,3 +12,6 @@
 
 # TODO: add a comment with an explanation of this directory
 /cache
+
+# all the tmp folders in the fixture projects
+/test/fixture-projects/tmp/

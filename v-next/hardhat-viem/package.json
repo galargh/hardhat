@@ -1,6 +1,6 @@
 {
   "name": "@nomicfoundation/hardhat-viem",
-  "version": "3.0.0-next.1",
+  "version": "3.0.0-next.2",
   "description": "Hardhat plugin for viem",
   "homepage": "https://github.com/nomicfoundation/hardhat/tree/v-next/v-next/hardhat-viem",
   "repository": {
@@ -35,6 +35,7 @@
     "pretest:only": "pnpm build",
     "pretest:ci": "pnpm build && mkdir -p reports",
     "build": "tsc --build .",
+    "prepublishOnly": "pnpm build",
     "clean": "rimraf dist"
   },
   "files": [
@@ -46,11 +47,12 @@
   ],
   "devDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^4.3.0",
-    "@nomicfoundation/hardhat-node-test-reporter": "workspace:^3.0.0-next.1",
+    "@nomicfoundation/hardhat-node-test-reporter": "workspace:^3.0.0-next.2",
     "@nomicfoundation/hardhat-test-utils": "workspace:^",
     "@types/node": "^20.14.9",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
+    "c8": "^9.1.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
@@ -65,11 +67,11 @@
     "viem": "^2.21.42"
   },
   "dependencies": {
-    "@nomicfoundation/hardhat-errors": "workspace:^3.0.0-next.1",
-    "@nomicfoundation/hardhat-utils": "workspace:^3.0.0-next.1"
+    "@nomicfoundation/hardhat-errors": "workspace:^3.0.0-next.2",
+    "@nomicfoundation/hardhat-utils": "workspace:^3.0.0-next.2"
   },
   "peerDependencies": {
-    "hardhat": "workspace:^3.0.0-next.1",
+    "hardhat": "workspace:^3.0.0-next.2",
     "viem": "^2.21.42"
   }
 }

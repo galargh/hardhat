@@ -1,6 +1,6 @@
 {
   "name": "@nomicfoundation/hardhat-node-test-reporter",
-  "version": "3.0.0-next.1",
+  "version": "3.0.0-next.2",
   "description": "A node:test reporter",
   "homepage": "https://github.com/nomicfoundation/hardhat/tree/v-next/v-next/hardhat-node-test-reporter",
   "repository": {
@@ -35,6 +35,7 @@
     "pretest:integration": "pnpm build",
     "pretest:ci": "pnpm build && mkdir -p reports",
     "build": "tsc --build .",
+    "prepublishOnly": "pnpm build",
     "clean": "rimraf dist"
   },
   "files": [
@@ -48,6 +49,7 @@
     "@types/node": "^20.14.9",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
+    "c8": "^9.1.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
