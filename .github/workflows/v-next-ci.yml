@@ -3,8 +3,6 @@ name: vNext CI
 on:
   merge_group:
   push:
-    branches:
-      - v-next
   pull_request:
   workflow_dispatch:
 
