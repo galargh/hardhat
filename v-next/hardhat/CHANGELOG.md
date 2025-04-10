@@ -1,5 +1,21 @@
 # hardhat
 
+## 3.0.0-next.4
+
+### Patch Changes
+
+- b3982a2: Add Arbitrum Sepolia to chain config in Ignition ([#6518](https://github.com/NomicFoundation/hardhat/pull/6518))
+- 7c9ad25: Infer and display better error messages from stack traces ([#6505](https://github.com/NomicFoundation/hardhat/issues/6505))
+- 0a96da8: feat: bump @ignored/edr to 0.10.0-alpha.2. This brings two improvements:
+
+  1. Better error messages when invoking unsupported cheatcodes. Previously we'd just return "unknown selector 0xafc98040", now we return "cheatcode 'broadcast()' is not supported" instead.
+  2. Automatically linking libraries for Solidity tests.
+
+- fc34b96: Compile all sources and pass all generated artifacts to EDR when executing solidity tests
+  - @nomicfoundation/hardhat-errors@3.0.0-next.4
+  - @nomicfoundation/hardhat-utils@3.0.0-next.4
+  - @nomicfoundation/hardhat-zod-utils@3.0.0-next.4
+
 ## 3.0.0-next.3
 
 ### Patch Changes

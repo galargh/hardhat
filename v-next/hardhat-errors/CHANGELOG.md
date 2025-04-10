@@ -1,5 +1,11 @@
 # @nomicfoundation/hardhat-errors
 
+## 3.0.0-next.4
+
+### Patch Changes
+
+- @nomicfoundation/hardhat-utils@3.0.0-next.4
+
 ## 3.0.0-next.2
 
 ### Patch Changes
