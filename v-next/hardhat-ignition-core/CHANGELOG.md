@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.4
+
+### Patch Changes
+
+- b3982a2: Add Arbitrum Sepolia to chain config in Ignition ([#6518](https://github.com/NomicFoundation/hardhat/pull/6518))
+  - @nomicfoundation/hardhat-utils@4.0.0-next.4
+
 ## 3.0.0-next.2
 
 ### Patch Changes

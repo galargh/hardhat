@@ -1,5 +1,19 @@
 # Changelog
 
+## 4.0.0-next.4
+
+### Patch Changes
+
+- Updated dependencies [b3982a2]
+- Updated dependencies [7c9ad25]
+- Updated dependencies [0a96da8]
+- Updated dependencies [fc34b96]
+  - @nomicfoundation/ignition-core@4.0.0-next.4
+  - hardhat@4.0.0-next.4
+  - @nomicfoundation/hardhat-errors@4.0.0-next.4
+  - @nomicfoundation/hardhat-ignition@4.0.0-next.4
+  - @nomicfoundation/hardhat-viem@4.0.0-next.4
+
 ## 3.0.0-next.2
 
 ### Patch Changes
