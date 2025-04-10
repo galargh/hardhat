@@ -1,5 +1,19 @@
 # @nomicfoundation/hardhat-node-test-runner
 
+## 3.0.0-next.4
+
+### Patch Changes
+
+- Updated dependencies [b3982a2]
+- Updated dependencies [7c9ad25]
+- Updated dependencies [0a96da8]
+- Updated dependencies [fc34b96]
+  - hardhat@3.0.0-next.4
+  - @nomicfoundation/hardhat-errors@3.0.0-next.4
+  - @nomicfoundation/hardhat-node-test-reporter@3.0.0-next.4
+  - @nomicfoundation/hardhat-utils@3.0.0-next.4
+  - @nomicfoundation/hardhat-zod-utils@3.0.0-next.4
+
 ## 3.0.0-next.2
 
 ### Patch Changes
