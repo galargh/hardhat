@@ -47,9 +47,9 @@ jobs:
         if: steps.pr.outputs.hasChangesets == 'false'
         run: pnpm run --recursive -no-bail --filter './v-next/**' --if-present build
 
-      - name: Publish All Packages (dry-run)
-        if: steps.pr.outputs.hasChangesets == 'false'
-        run: pnpm publish --filter "./v-next/**" -r --no-git-checks --tag next --access public --dry-run
+      # - name: Publish All Packages (dry-run)
+      #   if: steps.pr.outputs.hasChangesets == 'false'
+      #   run: pnpm publish --filter "./v-next/**" -r --no-git-checks --tag next --access public --dry-run
 
       - name: Publish All Packages
         id: publish
@@ -59,7 +59,7 @@ jobs:
           NPM_CONFIG_PROVENANCE: true
         run: |
           echo "stdout<<EOF" >> $GITHUB_OUTPUT
-          pnpm publish --filter "./v-next/**" -r --no-git-checks --tag next --access public | tee -a $GITHUB_OUTPUT
+          pnpm publish --filter "./v-next/**" -r --no-git-checks --tag next --access public --dry-run | tee -a $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Check if hardhat was published
